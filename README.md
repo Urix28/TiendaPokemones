@@ -23,5 +23,5 @@ en MVC (modelo-vista-controlador)
 
 
 ## Imagenes muestra
-![Imgur](https://imgur.com/w9Mfdap)
+
 
