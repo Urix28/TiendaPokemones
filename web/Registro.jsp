@@ -99,7 +99,7 @@ and open the template in the editor.
                                                format: 'dd/mm/yyyy',
                                                setDefaultDate: false,
                                                minDate: new Date(1995,11,17),
-                                               maxDate: new Date(2020,03,19)
+                                               maxDate: new Date(2020,05,31)
                                                
                                                
                                             });
@@ -126,7 +126,7 @@ and open the template in the editor.
                       
                       <div class="form-field">
                           
-                          <button class="btn-large green accent-3 waves-effect waves-light" type="submit" name="action">Registrar
+                          <button class="btn-large green accent-3 waves-effect waves-light" type="submit" name="Registro">Registrar
     <i class="material-icons right">send</i>
   </button>
                       </div><br>

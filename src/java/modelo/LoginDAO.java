@@ -9,7 +9,7 @@ package modelo;
  *
  * @author river
  */
-import configuraciones.Conexion;
+/*import configuraciones.Conexion;
 import java.sql.*;
 public class LoginDAO {
      Conexion cn = new Conexion();
@@ -17,14 +17,14 @@ public class LoginDAO {
     PreparedStatement ps;
     ResultSet rs;
     int r;
-    public Login validar(String user, String pass) {
+    public Login validarUsuario(String user, String pass) {
         Login lo = new Login();
         String sql = "select * from empleado where Nombre=? and Contra=?";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.setString(1, user);
-            ps.setString(2, pass);
+            ps.setString(2, Contra);
             rs = ps.executeQuery();
             while (rs.next()) {
                 lo.setUser(rs.getString("Nombre"));
@@ -35,4 +35,4 @@ public class LoginDAO {
         }
         return lo;
     }
-}
+}*/

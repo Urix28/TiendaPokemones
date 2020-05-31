@@ -48,12 +48,13 @@
             <h3>Carrito</h3>
             <div class="row">
                 <div class="col-sm-8">
-                    <table class="table table-hover">
+                    <table class="centered" >
                         <thead>
                             <tr>
                                 <th>Pokemon</th>
                                 <th>Nombre</th>
                                 <th>Descripción</th>
+                                <th>Imagen</th>
                                 <th>Precio</th>
                                 <th>Cantidad</th>
                                 <th>Subtotal</th>
@@ -65,15 +66,15 @@
                             <tr>
                                 <td>${car.getItem()}</td>
                                 <td>${car.getNombres()}</td>
-                                <td>${car.getDescripcion()}
-                                    <img src="ControladorIMG?id=${car.getIdProducto()}" width="100" height="100">
-                                </td>
+                                <td>${car.getDescripcion()}</td>
+                                <td><img src="ControladorIMG?id=${car.getIdProducto()}" width="100" height="100"></td>
                                 <td>${car.getPrecioCompra()}</td>
                                 <td>${car.getCantidad()}</td>
                                 <td>${car.getSubTotal()}</td>
                                 <td>
-                                    <a href="" class="waves-effect waves-light btn">Eliminar</a>
-                                    <a href="" class="waves-effect waves-light btn">Editar</a>
+                                    <input type="hidden" id="idp" value="${car.getIdProducto()}">
+                                    <a href="#" id="btnDelete" class="waves-effect waves-light btn">Eliminar</a>
+
                                 </td>
                                 
                             </tr>
@@ -85,24 +86,67 @@
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Comprar</h3>
+
                         </div>
                         <div class="card-body">
                             
                             <label>Total a Pagar:</label>
                             <input type="text" value="$${totalPagar}" readonly="" class="form-control">
                         </div>
-                        <div class="card-footer">
-                            <a href="" class="waves-effect waves-light btn">Realizar pago</a>
-                            <a href="" class="waves-effect waves-light btn">Generar Compra</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+                        
+                        <h3>Metodo de pago </h3>
+
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input  id="first_name" type="text" class="validate">
+                    <label for="first_name">Nombre(s)</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Apellido paterno, Materno</label>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input  id="first_name" type="text" class="validate">
+                    <label for="first_name">Numero de tarjeta</label>
+                  </div>
+                </div>   
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+                        
+
+            <a href="" class="waves-effect waves-light btn">Realizar pago</a>
+
+                        
+                        
+                        
+                        
+                        
         
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="js/materialize.min.css"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
     </body>
 </html>

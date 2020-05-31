@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Compras;
+import modelo.Login;
 import modelo.Pokemon;
 import modelo.PokemonDAO;
 
@@ -41,9 +42,43 @@ public class Controlador extends HttpServlet {
         String accion = request.getParameter("accion");
         pokemones = pdao.listar();
         switch(accion){
+          
             case "AgregarCarrito":
+                int pos=0; 
+                cantidad=1; 
                 int idp = Integer.parseInt(request.getParameter("id"));
                 p = pdao.listaId(idp);
+                
+                if (listaCarrito.size()>0) {
+                    
+                    for (int i = 0; i < listaCarrito.size(); i++) {
+                        
+                        if (idp==listaCarrito.get(i).getIdProducto()){
+                            pos=i; 
+                        }
+                        
+                    }
+                    
+                    if (idp==listaCarrito.get(pos).getIdProducto()){
+                        cantidad=listaCarrito.get(pos).getCantidad()+cantidad;
+                        double subtotal=listaCarrito.get(pos).getPrecioCompra()*cantidad;
+                        listaCarrito.get(pos).setCantidad(cantidad);
+                        listaCarrito.get(pos).setSubTotal(subtotal);
+                    } else{
+                        item = item+1;
+                        Compras co = new Compras();
+                        co.setItem(item);
+                        co.setIdProducto(p.getId());
+                        co.setNombres(p.getNombres());
+                        co.setDescripcion(p.getDescripcion());
+                        co.setPrecioCompra(p.getPrecio());
+                        co.setCantidad(cantidad);
+                        co.setSubTotal(cantidad*p.getPrecio());
+                        listaCarrito.add(co);  
+                    }
+                    
+                } else {
+                    
                 item = item+1;
                 Compras co = new Compras();
                 co.setItem(item);
@@ -53,10 +88,26 @@ public class Controlador extends HttpServlet {
                 co.setPrecioCompra(p.getPrecio());
                 co.setCantidad(cantidad);
                 co.setSubTotal(cantidad*p.getPrecio());
-                listaCarrito.add(co);
+                listaCarrito.add(co);                    
+                }
+                
                 request.setAttribute("contador", listaCarrito.size());
                 request.getRequestDispatcher("Controlador?accion=home").forward(request, response);
+                
+
                 break;
+                
+            case "Delete":
+                
+                int idproducto=Integer.parseInt(request.getParameter("idp"));
+                for (int i = 0; i < listaCarrito.size(); i++) {
+                    if (listaCarrito.get(i).getIdProducto()==idproducto){
+                        listaCarrito.remove(i);           
+                    }
+                }
+                
+            break; 
+                
             case "Carrito":
                 totalPagar=0.0;
                 request.setAttribute("carrito", listaCarrito);

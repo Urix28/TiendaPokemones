@@ -1,15 +1,15 @@
 <%-- 
-    Document   : Productos
-    Created on : 21/04/2020, 07:32:47 PM
-    Author     : river
+    Document   : CRUDProductos
+    Created on : 31/05/2020, 12:44:59 PM
+    Author     : PC
 --%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Catalogo</title>
+        <title>Gestion de Productos</title>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -19,7 +19,7 @@
         <link rel="icon" type="image/x-icon" href="img/pokebola.png">
     </head>
     <body>
-        <ul id="dropdown1" class="dropdown-content">
+         <ul id="dropdown1" class="dropdown-content">
 
 
             <li class="divider"></li>
@@ -31,11 +31,10 @@
                 <a  class="brand-logo center">Tienda de Pokemones</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                    <li><a href="Controlador?accion=Carrito"><i class="material-icons right">shopping_cart<label style="color: white">${contador}</label></i>Carrito</a></li>
-                    <li><a href="Controlador?accion=home">Inicio</a></li>
+
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Opciones<i class="material-icons right">arrow_drop_down</i></a></li>
                     <script>
-                                    $(document).ready(function () {
+                            $(document).ready(function () {
                             $(".dropdown-trigger").dropdown();
                         });
 
@@ -65,7 +64,8 @@
                 </div>
             </c:forEach>
 
-        </div> 
+        </div>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="js/materialize.min.css"></script>
     </body>

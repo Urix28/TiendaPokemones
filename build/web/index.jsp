@@ -48,7 +48,7 @@ and open the template in the editor.
      <nav>
     <div class="nav-wrapper  blue-grey darken-3">
         <a href="Productos.jsp" class="brand-logo"><img src="img/pokebola.png"></a>
-      <a href="#!" class="brand-logo center">Tienda de Pokemones</a>
+      <a href="Vista_admin.jsp" class="brand-logo center">Tienda de Pokemones</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         
 
@@ -63,22 +63,26 @@ and open the template in the editor.
                   <div class="card-action white-text blue-grey darken-3">
                       <h3 class="brand-logo center">Inicio de Sesión</h3>
                   </div>
-                  
+                  <form action="validar" method="get">
                   <div class="card-content ">
                       <div class="form-field">
+
                           <label for="nombre" >Nombre</label>
-                          <input type="text" id="nombre" >
+                          <input type="text" id="nombre" name="txtuser" >
                       </div><br>
                       <div class="form-field">
                           <label for="contra" >Contraseña</label>
-                          <input type="password" id="contra" >
+                          <input type="password" id="contra" name="txtpass" >
                       </div><br>
                       
                       <div class="form-field">
-                          <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+                          <button class="btn waves-effect waves-light" type="submit" name="accion" value="Ingresar" >Iniciar sesion<i class="material-icons right">send</i></button>
                       </div><br>
-                      <h4 class="white-text">¿Todavía no tienes cuenta? <a href="crear.html">Haz clic aqui</a></h4>
+                   
+                      <h4 class="white-text">¿Todavía no tienes cuenta? <a href="Registro.jsp">Haz clic aqui</a></h4>
                   </div>
+                      
+                </form>
                   
               </div>
           </div>
