@@ -1,8 +1,13 @@
 <%-- 
     Document   : CRUDProductos
-    Created on : 31/05/2020, 12:44:59 PM
-    Author     : PC
+    Created on : 31/05/2020, 05:12:05 PM
+    Author     : river
 --%>
+
+<%@page import="modelo.Imagen"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.ImagenDAO"%>
+<%@page import="modelo.ImagenDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -37,7 +42,6 @@
                             $(document).ready(function () {
                             $(".dropdown-trigger").dropdown();
                         });
-
                     </script>
 
                 </ul>
@@ -45,10 +49,15 @@
         </nav>
 
         <div class="container">
+            <%
+        ImagenDAO emp = new ImagenDAO();
+        Imagen imgvo = new Imagen();
+        ArrayList<Imagen> listar = emp.Listar_Imagen();
+        %>
             <c:forEach var="p" items="${pokemones}">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="ControladorIMG?id=${p.getId()}">
+                        <img class="activator" src="imagen?id=${p.getId()}">
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><h3>${p.getNombres()}</h3><i class="material-icons right">more_vert</i></span>
@@ -69,4 +78,4 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="js/materialize.min.css"></script>
     </body>
-</html>
+</html

@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Compras;
-import modelo.Login;
 import modelo.Pokemon;
 import modelo.PokemonDAO;
 
@@ -66,6 +65,7 @@ public class Controlador extends HttpServlet {
                         listaCarrito.get(pos).setSubTotal(subtotal);
                     } else{
                         item = item+1;
+                        
                         Compras co = new Compras();
                         co.setItem(item);
                         co.setIdProducto(p.getId());
@@ -117,6 +117,12 @@ public class Controlador extends HttpServlet {
                 }
                 request.setAttribute("totalPagar", totalPagar);
                 request.getRequestDispatcher("carrito.jsp").forward(request, response);
+                
+                break;
+                
+            case "GestionarP":
+                request.setAttribute("pokemones", pokemones);
+                request.getRequestDispatcher("CRUDProductos.jsp").forward(request, response);
                 
                 break;
             default:    

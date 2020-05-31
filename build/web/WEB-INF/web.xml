@@ -8,6 +8,14 @@
         <servlet-name>ControladorIMG</servlet-name>
         <servlet-class>controlador.ControladorIMG</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerificarUsuario</servlet-name>
+        <servlet-class>controlador.VerificarUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Cerrar</servlet-name>
+        <servlet-class>controlador.Cerrar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>ControladorIMG</servlet-name>
         <url-pattern>/ControladorIMG</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerificarUsuario</servlet-name>
+        <url-pattern>/VerificarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cerrar</servlet-name>
+        <url-pattern>/Cerrar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

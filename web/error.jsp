@@ -1,8 +1,9 @@
 <%-- 
     Document   : error
-    Created on : 31/05/2020, 02:14:10 PM
-    Author     : PC
+    Created on : 31/05/2020, 03:39:13 PM
+    Author     : river
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,9 +40,13 @@
             </div>
         </nav>
         
-        <div align="center"><img src="img/pokierror.jpg"></div> 
+        <div align="center"><img src="https://urgente.bo/sites/default/files/picachu.jpg"></div> 
         <br>
-        <div align="center"><h3>ocurrio un error </h3></div>
+        <div align="center"><h3>Cuenta invalida. ¿No tienes una? Creala ahora :D</h3>
+        
+                <a href="Registro.jsp" class="waves-effect waves-light btn-large #40c4ff light-blue accent-2">Crear cuenta</a>
+
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="js/materialize.min.css"></script>
     </body>

@@ -75,6 +75,7 @@ public class PokemonDAO {
         OutputStream outputStream = null;
         BufferedInputStream bufferedInputStream = null;
         BufferedOutputStream bufferedOutputStream = null;
+        response.setContentType("image/*");
         try{
             outputStream = response.getOutputStream();
             con=cn.getConnection();

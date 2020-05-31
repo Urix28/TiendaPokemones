@@ -13,7 +13,7 @@ public class Conexion {
     Connection con;
     String url="jdbc:mysql://localhost:3306/pokitienda";
     String user="root";
-    String pass="n0m3l0";
+    String pass="root";
     
     public Connection getConnection(){
         try{

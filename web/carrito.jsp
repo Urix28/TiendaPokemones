@@ -4,9 +4,27 @@
     Author     : river
 --%>
 
+<%@page import="modelo.Imagen"%>
+<%@page import="modelo.ImagenDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page session="true" %>
+<%
+String usuario = "";
+HttpSession sesionOk = request.getSession();
+if (sesionOk.getAttribute("usuario") == null) {
+%>
+<jsp:forward page="index.jsp">
+<jsp:param name="error" value="Es
+obligatorio identificarse"/>
+</jsp:forward>
+<%
+} else {
+usuario = (String)sesionOk.getAttribute("usuario");
+}
+%>
 <html>
     <head>
         <title>Carrito</title>
@@ -23,7 +41,7 @@
            
             
             <li class="divider"></li>
-             <li><a href="#!">Cerrar Sesión</a></li>
+             <li><a href="Cerrar">Cerrar Sesión</a></li>
         </ul>
         <nav>
     <div class="nav-wrapper  blue-grey darken-3">
@@ -44,6 +62,7 @@
       </ul>
     </div>
   </nav>
+         
         <div class="container mt-4">
             <h3>Carrito</h3>
             <div class="row">
@@ -62,12 +81,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
+                            <%
+        ImagenDAO emp = new ImagenDAO();
+        Imagen imgvo = new Imagen();
+        ArrayList<Imagen> listar = emp.Listar_Imagen();
+        %>
+                            
                             <c:forEach var="car" items="${carrito}">
                             <tr>
                                 <td>${car.getItem()}</td>
                                 <td>${car.getNombres()}</td>
                                 <td>${car.getDescripcion()}</td>
-                                <td><img src="ControladorIMG?id=${car.getIdProducto()}" width="100" height="100"></td>
+                                <td><img src="imagen?id=${car.getIdProducto()}" width="100" height="100"></td>
                                 <td>${car.getPrecioCompra()}</td>
                                 <td>${car.getCantidad()}</td>
                                 <td>${car.getSubTotal()}</td>
