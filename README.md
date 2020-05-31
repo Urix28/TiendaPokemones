@@ -2,7 +2,7 @@
 Proyecto final de Programación y Servicios Web.
 
 
-![template](https://img.shields.io/badge/template-twig-yellow.svg) ![techs](https://img.shields.io/badge/techs-javascript—java—css—materialize-Sweetalert2-yellow.svg)
+
 
 ---
 
@@ -24,4 +24,4 @@ en MVC (modelo-vista-controlador)
 
 ## Imagenes muestra
 
-https://imgur.com/w9Mfdap
+![Login](https://imgur.com/w9Mfdap)
